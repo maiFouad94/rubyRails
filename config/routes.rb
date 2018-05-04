@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  resources :users
-
+  resources :users  do
+  # resources :users ,only: [:index, :show]
+  # resources :users ,except: [:index, :show]
+#users/male
+collection do
+	get :male
+end
+#users/:id/male
+member do
+end
+end
 
   # match '/users', 'users#index'
   # match '/users/:id', 'users#show', :get
